@@ -33,7 +33,7 @@ const experiences = [
     title: "Algoverse",
     role: "AI/ML Researcher",
     period: "Mar 2025 – Aug 2025",
-    description: "Conducted research on Ad-Integrated LLM systems, exploring innovative approaches to language model integration. Developed and evaluated AI/ML solutions, contributing to cutting-edge research in large language models and their practical applications."
+    description: "Conducted research on ad-integrated LLM systems, developing a two-stage pipeline for ad suitability detection and context-aware placement. Evaluated ad-injected responses using embedding-based metrics and LLM-as-a-judge methods."
   },
   {
     title: "Microsoft",

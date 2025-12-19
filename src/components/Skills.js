@@ -9,7 +9,7 @@ const skills = [
       { name: 'Java', level: 85 },
       { name: 'JavaScript', level: 90 },
       { name: 'TypeScript', level: 85 },
-      { name: 'SQL', level: 85 }
+      { name: 'SQL', level: 65 }
     ]
   },
   {
@@ -36,8 +36,8 @@ const skills = [
     category: 'Cloud & Databases',
     items: [
       { name: 'MongoDB', level: 85 },
-      { name: 'MySQL', level: 80 },
-      { name: 'AWS', level: 75 },
+      { name: 'MySQL', level: 65},
+      { name: 'AWS', level: 60 },
       { name: 'Google Cloud', level: 70 }
     ]
   },

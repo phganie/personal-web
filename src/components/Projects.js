@@ -7,15 +7,15 @@ const projects = [
     description: 'Built AI-powered Q&A platform solving knowledge workers\' search challenges. Implemented RAG workflows with Gemini 2.0 Flash, reducing search time by 60%. Developed real-time collaboration features using WebSocket, full-stack with React, TypeScript, Node.js, and MongoDB.',
     image: 'https://via.placeholder.com/600x400',
     technologies: ['React.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'LLM APIs', 'RAG', 'CI/CD'],
-    github: 'https://github.com/phganie',
-    demo: '#'
+    github: 'https://github.com/neu-cs4530/fall25-project-group-109',
+    demo: 'https://fall25-project-109-client.onrender.com/'
   },
   {
     title: 'ADHD Prediction from Brain Imaging',
     description: 'Developed ML model to assist clinicians with faster diagnosis. Built ensemble pipeline (LightGBM, XGBoost, Random Forest) achieving F1 score of 0.73. Engineered preprocessing for 19,000+ features, optimized hyperparameters reducing training time by 40%.',
     image: 'https://via.placeholder.com/600x400',
     technologies: ['Python', 'Scikit-learn', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Optuna'],
-    github: 'https://github.com/phganie',
+    github: 'https://github.com/WiDS-Team-24/WiDS-Kaggle-Competition',
     demo: '#'
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     description: 'Architected full-stack LMS prioritizing core features based on user needs. Implemented Redux state management reducing rendering time by 35%. Designed MongoDB schema optimizing performance for 50+ concurrent users.',
     image: 'https://via.placeholder.com/600x400',
     technologies: ['React.js', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Redux'],
-    github: 'https://github.com/phganie',
+    github: 'https://github.com/Diva1318/Kanbas-Quiz',
     demo: '#'
   }
 ];
@@ -121,16 +121,18 @@ const Projects = () => {
                     >
                       <span className="mr-2">🔗</span> GitHub
                     </motion.a>
-                    <motion.a
-                      whileHover={{ scale: 1.1, x: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      href={project.demo}
-                      className={`${colors.text} font-semibold hover:underline flex items-center transition-colors`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="mr-2">🌐</span> Live Demo
-                    </motion.a>
+                    {project.demo && project.demo !== '#' && (
+                      <motion.a
+                        whileHover={{ scale: 1.1, x: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.demo}
+                        className={`${colors.text} font-semibold hover:underline flex items-center transition-colors`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="mr-2">🌐</span> Live Demo
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </motion.div>
