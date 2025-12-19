@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.32cf71c4.css",
-    "main.js": "/static/js/main.309986f9.js",
-    "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
-    "index.html": "/index.html",
-    "main.32cf71c4.css.map": "/static/css/main.32cf71c4.css.map",
-    "main.309986f9.js.map": "/static/js/main.309986f9.js.map",
-    "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
+    "main.css": "/phuongan-bui/static/css/main.32cf71c4.css",
+    "main.js": "/phuongan-bui/static/js/main.2683c922.js",
+    "static/js/453.acca0757.chunk.js": "/phuongan-bui/static/js/453.acca0757.chunk.js",
+    "index.html": "/phuongan-bui/index.html",
+    "main.32cf71c4.css.map": "/phuongan-bui/static/css/main.32cf71c4.css.map",
+    "main.2683c922.js.map": "/phuongan-bui/static/js/main.2683c922.js.map",
+    "453.acca0757.chunk.js.map": "/phuongan-bui/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32cf71c4.css",
-    "static/js/main.309986f9.js"
+    "static/js/main.2683c922.js"
   ]
 }
