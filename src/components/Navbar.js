@@ -44,7 +44,7 @@ const Navbar = () => {
           <div className="flex items-center flex-shrink-0">
             <a href="#home" className="flex items-center">
               <img
-                src={isDark ? "/darkmode-logo.png" : "/lightmode-logo.png"}
+                src={isDark ? `${process.env.PUBLIC_URL}/darkmode-logo.png` : `${process.env.PUBLIC_URL}/lightmode-logo.png`}
                 alt="Logo"
                 className="h-10 w-10 mr-2 object-contain transition-opacity duration-300"
               />

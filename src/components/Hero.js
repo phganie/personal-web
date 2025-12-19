@@ -103,7 +103,7 @@ const Hero = () => {
               className="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-2xl"
             >
               <img
-                src="/selfie.png" // Using existing cat logo as placeholder
+                src={`${process.env.PUBLIC_URL}/selfie.png`}
                 alt="Phuong-An Bui"
                 className="w-full h-full object-cover"
               />
