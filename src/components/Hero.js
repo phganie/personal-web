@@ -50,7 +50,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl sm:text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-6 font-light"
             >
-              AI/ML Software Engineer
+              AI/ML Engineer & Product Thinker
             </motion.h2>
             
             <motion.p 
@@ -103,7 +103,7 @@ const Hero = () => {
               className="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-2xl"
             >
               <img
-                src="/cat.png" // Using existing cat logo as placeholder
+                src="/selfie.png" // Using existing cat logo as placeholder
                 alt="Phuong-An Bui"
                 className="w-full h-full object-cover"
               />

@@ -6,13 +6,13 @@ const education = [
     degree: "Master of Science in Computer Science",
     school: "Northeastern University",
     period: "Jan 2024 - Aug 2026",
-    description: "GPA: 3.78/4.0. Specializing in AI/ML, full-stack development, and software engineering. Building expertise in machine learning, NLP, and scalable web applications."
+    description: "GPA: 3.78/4.0 | Focus: AI/ML, full-stack development, NLP"
   },
   {
     degree: "Bachelor of Science in Computer Science and Business Administration",
     school: "Northeastern University",
     period: "Sep 2022 - Dec 2025",
-    description: "GPA: 3.78/4.0 | Minor in Psychology | John Martinson Honors Program. Combining technical expertise with business acumen and human-centered design principles."
+    description: "GPA: 3.78/4.0 | Minor: Psychology | Honors Program | Technical + Business + Design"
   }
 ];
 
@@ -30,16 +30,40 @@ const experiences = [
     description: "Guide 200+ students through complex algorithms and data structures including dynamic programming, graph algorithms, and complexity analysis. Grade and provide detailed code reviews for 150+ assignments weekly, focusing on correctness, optimization, and best practices."
   },
   {
+    title: "Algoverse",
+    role: "AI/ML Researcher",
+    period: "Mar 2025 – Aug 2025",
+    description: "Conducted research on Ad-Integrated LLM systems, exploring innovative approaches to language model integration. Developed and evaluated AI/ML solutions, contributing to cutting-edge research in large language models and their practical applications."
+  },
+  {
+    title: "Microsoft",
+    role: "AI Studio Fellow",
+    period: "Aug 2024 – Jan 2025",
+    description: "Led team of 5 in comparative analysis of advanced NLP models (Mini-Instruct, Mistral, Tiny Llama), evaluating response accuracy and performance. Designed efficient workflows for prompt engineering and fine-tuning. Developed Python scripts for dynamic input-output processing and performance benchmarking. Selected from 3000+ applicants for Break Through Tech AI Program."
+  },
+  {
     title: "Wave Life Sciences",
     role: "Research Informatics Systems Co-op",
     period: "Jan 2025 – Jun 2025",
-    description: "Developed and maintained bioinformatics platform serving 50+ researchers, resolving 60% of bug backlog and delivering 5+ new features. Built automated data pipelines and Power BI dashboards processing 10,000+ data points, reducing integration time by 30%."
+    description: "Collaborated with 50+ researchers to identify pain points and prioritize features. Developed and maintained bioinformatics platform, resolving 60% of bug backlog and delivering 5+ new features based on user feedback. Made product decisions balancing technical constraints with researcher needs. Built automated data pipelines and Power BI dashboards processing 10,000+ data points, reducing integration time by 30% and improving researcher productivity."
   },
   {
-    title: "Break Through Tech AI Fellowship @ MIT & Microsoft",
-    role: "AI/ML Fellow",
-    period: "May 2024 – Apr 2025",
-    description: "Built scalable NLP evaluation workflows using Python and Hugging Face, reducing model evaluation time by 40%. Debugged tokenization pipeline issues, improving model performance by 25% through systematic root cause analysis."
+    title: "Northeastern University",
+    role: "Research Assistant",
+    period: "Feb 2023 – Oct 2024",
+    description: "Conducted analysis of 30+ scholarly articles on economic impacts of minimum wage increases. Led semantic analysis for narrative AI research project. Analyzed 100+ websites on darknet markets and cryptocurrency trends. Drove qualitative analysis of price fluctuation patterns in California restaurants (2017-2023), providing critical data insights."
+  },
+  {
+    title: "The LEAH Project",
+    role: "Mentor - College Persistence Program",
+    period: "Oct 2023 – May 2025",
+    description: "Provided personalized mentorship to first-year college students, supporting academic goals and navigating college life. Attended training on effective mentorship strategies and student support techniques. Demonstrated leadership and cross-functional collaboration skills."
+  },
+  {
+    title: "United Nations",
+    role: "Millennium Fellowship - Campus Director",
+    period: "Aug 2023 – Dec 2023",
+    description: "Selected as Millennium Fellow and served as Campus Director for Northeastern University. Hosted weekly training sessions on leadership and project management topics. Provided support and resources for 25+ fellows on campus. Developed individual project using illustrations to highlight environmental perspectives."
   }
 ];
 
@@ -75,6 +99,8 @@ const About = () => {
             I'm a Master's student in Computer Science at Northeastern University, where I've learned 
             that building responsibly matters just as much as building well. Every design choice carries 
             tradeoffs, and technology is never neutral — it reflects the values of the people who create it.
+            My background in Business Administration and Psychology helps me think like both an engineer 
+            and a product manager: understanding not just how to build, but what to build and why it matters.
           </p>
         </motion.div>
 
@@ -159,6 +185,23 @@ const About = () => {
                 <div>
                   <h4 className="text-lg font-bold text-pink-800 dark:text-pink-300">Continuous Growth</h4>
                   <p className="text-slate-700 dark:text-slate-300 font-medium">Embracing new challenges and learning opportunities to expand my impact.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                whileHover={{ x: 10, scale: 1.05 }}
+                className="flex items-start space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 p-4 rounded-lg border-l-4 border-indigo-500 dark:border-indigo-400"
+              >
+                <motion.div 
+                  animate={{ rotate: [0, 15, -15, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 dark:from-indigo-500 dark:to-purple-500 rounded-full flex items-center justify-center shadow-lg"
+                >
+                  <span className="text-2xl">🎯</span>
+                </motion.div>
+                <div>
+                  <h4 className="text-lg font-bold text-indigo-800 dark:text-indigo-300">Product Thinking</h4>
+                  <p className="text-slate-700 dark:text-slate-300 font-medium">Balancing user needs, business goals, and technical constraints to build impactful products. Thinking strategically about what to build and why.</p>
                 </div>
               </motion.div>
             </div>

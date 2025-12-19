@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'ReStacked - AI-Powered Q&A Platform',
-    description: 'Built full-stack Q&A platform with real-time features using React, TypeScript, Node.js, Express, and MongoDB. Implemented AI Summary and Tag Suggestion features using Gemini 2.0 Flash, vector embeddings, and RAG workflows for semantic search. Developed WebSocket-based real-time updates using Socket.io, enabling live notifications and collaborative editing. Designed and optimized RESTful API architecture with authentication, rate limiting, and comprehensive error handling. Implemented CI/CD pipeline using GitHub Actions.',
+    description: 'Built AI-powered Q&A platform solving knowledge workers\' search challenges. Implemented RAG workflows with Gemini 2.0 Flash, reducing search time by 60%. Developed real-time collaboration features using WebSocket, full-stack with React, TypeScript, Node.js, and MongoDB.',
     image: 'https://via.placeholder.com/600x400',
     technologies: ['React.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'LLM APIs', 'RAG', 'CI/CD'],
     github: 'https://github.com/phganie',
@@ -12,7 +12,7 @@ const projects = [
   },
   {
     title: 'ADHD Prediction from Brain Imaging',
-    description: 'Built ensemble ML pipeline combining LightGBM, Random Forest, and XGBoost, achieving F1 score of 0.73 on Kaggle competition. Engineered data preprocessing pipeline handling 19,000+ features using KNN imputation, PCA, and SMOTE for class imbalance. Optimized hyperparameters across 200+ Optuna trials, reducing training time by 40% while maintaining prediction accuracy. Integrated 4 complex brain imaging datasets, implementing robust validation and cross-validation strategies.',
+    description: 'Developed ML model to assist clinicians with faster diagnosis. Built ensemble pipeline (LightGBM, XGBoost, Random Forest) achieving F1 score of 0.73. Engineered preprocessing for 19,000+ features, optimized hyperparameters reducing training time by 40%.',
     image: 'https://via.placeholder.com/600x400',
     technologies: ['Python', 'Scikit-learn', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Optuna'],
     github: 'https://github.com/phganie',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: 'Kanbas - Learning Management System',
-    description: 'Architected and developed full-stack LMS with 15+ RESTful API endpoints supporting course management, assignments, and authentication. Implemented Redux state management with normalized data structures, reducing rendering time by 35%. Designed MongoDB schema with proper indexing and relationships, optimizing query performance for 50+ concurrent users.',
+    description: 'Architected full-stack LMS prioritizing core features based on user needs. Implemented Redux state management reducing rendering time by 35%. Designed MongoDB schema optimizing performance for 50+ concurrent users.',
     image: 'https://via.placeholder.com/600x400',
     technologies: ['React.js', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Redux'],
     github: 'https://github.com/phganie',

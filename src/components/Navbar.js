@@ -6,6 +6,7 @@ import ThemeToggle from './ThemeToggle';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -17,6 +18,24 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
+  useEffect(() => {
+    // Check for dark mode
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <nav className="fixed w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg z-50 border-b-2 border-purple-200/50 dark:border-purple-800/50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -25,9 +44,9 @@ const Navbar = () => {
           <div className="flex items-center flex-shrink-0">
             <a href="#home" className="flex items-center">
               <img
-                src="/cat.png"
-                alt="Cat Logo"
-                className="h-10 w-10 mr-2 object-contain"
+                src={isDark ? "/darkmode-logo.png" : "/lightmode-logo.png"}
+                alt="Logo"
+                className="h-10 w-10 mr-2 object-contain transition-opacity duration-300"
               />
               <span className="sr-only">Home</span>
             </a>
