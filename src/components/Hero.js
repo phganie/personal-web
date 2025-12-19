@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "Hi, I'm An :D";
+  const fullText = "Bello, my name is An :)";
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
@@ -19,15 +19,8 @@ const Hero = () => {
     }
   }, [text, isTyping]);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 pt-16 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 pt-16 relative overflow-hidden">
     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -39,13 +32,13 @@ const Hero = () => {
             className="text-left"
           >
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-serif text-slate-800 mb-4"
+              className="text-4xl sm:text-5xl md:text-6xl font-serif text-slate-800 dark:text-white mb-4"
             >
               {text}
               <motion.span 
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
-                className="text-slate-600"
+                className="text-slate-600 dark:text-purple-400"
               >
                 |
               </motion.span>
@@ -55,20 +48,20 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl sm:text-2xl md:text-3xl text-slate-600 mb-6 font-light"
+              className="text-xl sm:text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-6 font-light"
             >
-              Creative Problem Solver Bridging Design and Technology
+              AI/ML Software Engineer
             </motion.h2>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg text-slate-600 mb-8 font-serif"
+              className="text-lg text-slate-700 dark:text-slate-300 mb-8 font-serif leading-relaxed"
             >
-              From tinkering with code as a child to building scalable web applications, 
-              my journey has been driven by a desire to create meaningful digital experiences 
-              that make people's lives better.
+              It started with a simple realization: with code, I could build things from nothing. 
+              Today, I build tools that are not only technically sound, but also intentional — 
+              tools that respect users, reduce friction, and contribute something positive to the world.
             </motion.p>
             
             <motion.div 
@@ -78,20 +71,20 @@ const Hero = () => {
               className="flex space-x-4"
             >
               <motion.a
-                whileHover={{ scale: 1.05, y: -5 }}
+                whileHover={{ scale: 1.1, y: -5, boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                href="#projects"
-                className="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-8 py-3 rounded-full text-sm font-medium hover:from-slate-800 hover:to-slate-900 transition-all shadow-lg hover:shadow-xl"
+                href="#story"
+                className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-2xl"
               >
-                See My Work
+                Read My Story
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.05, y: -5 }}
+                whileHover={{ scale: 1.1, y: -5, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact"
-                className="bg-white text-slate-700 px-8 py-3 rounded-full text-sm font-medium border-2 border-slate-300 hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl"
+                href="#projects"
+                className="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-full text-sm font-semibold border-2 border-blue-300 dark:border-blue-600 hover:bg-blue-50 dark:hover:bg-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all shadow-lg hover:shadow-xl"
               >
-                Get In Touch
+                See My Work
               </motion.a>
             </motion.div>
           </motion.div>
@@ -110,8 +103,8 @@ const Hero = () => {
               className="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-2xl"
             >
               <img
-                src="/your-photo.jpg" // Replace with your photo path
-                alt="Your Name"
+                src="/cat.png" // Using existing cat logo as placeholder
+                alt="Phuong-An Bui"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
@@ -119,44 +112,23 @@ const Hero = () => {
             
             {/* Decorative elements */}
             <motion.div
-              className="absolute top-10 right-10 w-20 h-20 rounded-full bg-slate-200/20 blur-xl"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute top-10 right-10 w-20 h-20 rounded-full bg-purple-300/30 dark:bg-purple-500/20 blur-xl"
+              animate={{ scale: [1, 1.3, 1], rotate: [0, 180, 360] }}
+              transition={{ duration: 6, repeat: Infinity }}
             />
             <motion.div
-              className="absolute bottom-10 left-10 w-24 h-24 rounded-full bg-slate-200/20 blur-xl"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+              className="absolute bottom-10 left-10 w-24 h-24 rounded-full bg-pink-300/30 dark:bg-pink-500/20 blur-xl"
+              animate={{ scale: [1, 1.3, 1], rotate: [360, 180, 0] }}
+              transition={{ duration: 6, repeat: Infinity, delay: 2 }}
+            />
+            <motion.div
+              className="absolute top-1/2 right-1/4 w-16 h-16 rounded-full bg-blue-300/30 dark:bg-blue-500/20 blur-xl"
+              animate={{ scale: [1, 1.4, 1], y: [0, -20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
             />
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.button
-          onClick={scrollToAbout}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
-          whileHover={{ y: 5 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <svg
-              className="w-6 h-6 text-slate-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </motion.div>
-        </motion.button>
       </div>
     </section>
   );
