@@ -1,33 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically handle the form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
-
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,15 +16,15 @@ const Contact = () => {
           <div className="w-24 h-1 bg-slate-600 dark:bg-purple-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="max-w-2xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-xl font-serif text-slate-800 dark:text-white mb-4">Contact Information</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-6 font-light">
+            <h3 className="text-xl font-serif text-slate-800 dark:text-white mb-4 text-center">Contact Information</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 font-light text-center">
               Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
             </p>
             <div className="space-y-4">
@@ -61,7 +35,9 @@ const Contact = () => {
                 <motion.div
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
+                  className="flex items-center"
                 >
+                  <span className="text-2xl mr-2">🎓</span>
                   <svg className="h-6 w-6 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -73,14 +49,32 @@ const Contact = () => {
                 className="flex items-center bg-white/60 dark:bg-slate-800/60 p-3 rounded-lg shadow-sm hover:shadow-md transition-all"
               >
                 <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="flex items-center"
+                >
+                  <span className="text-2xl mr-2">📧</span>
+                  <svg className="h-6 w-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </motion.div>
+                <a href="mailto:buihuuphuongan@gmail.com" className="text-blue-700 hover:text-blue-900 font-semibold transition-colors">buihuuphuongan@gmail.com</a>
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05, x: 5 }}
+                className="flex items-center bg-white/60 dark:bg-slate-800/60 p-3 rounded-lg shadow-sm hover:shadow-md transition-all"
+              >
+                <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
+                  className="flex items-center"
                 >
-                  <svg className="h-6 w-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-2xl mr-2">📱</span>
+                  <svg className="h-6 w-6 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </motion.div>
-                <a href="tel:+18577637315" className="text-blue-700 hover:text-blue-900 font-semibold transition-colors">+1 (857) 763-7315</a>
+                <a href="tel:+18577637315" className="text-green-700 hover:text-green-900 font-semibold transition-colors">+1 (857) 763-7315</a>
               </motion.div>
               <motion.div 
                 whileHover={{ scale: 1.05, x: 5 }}
@@ -97,7 +91,7 @@ const Contact = () => {
                 </motion.div>
                 <span className="text-pink-700 font-semibold">Boston, MA</span>
               </motion.div>
-              <div className="flex items-center mt-6 space-x-4">
+              <div className="flex items-center justify-center mt-6 space-x-4">
                 <motion.a
                   href="https://linkedin.com/in/phuongan-bui"
                   target="_blank"
@@ -124,68 +118,6 @@ const Contact = () => {
                 </motion.a>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-light text-slate-600 dark:text-slate-400">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 shadow-sm focus:border-slate-500 dark:focus:border-purple-500 focus:ring-slate-500 dark:focus:ring-purple-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-light text-slate-600 dark:text-slate-400">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 shadow-sm focus:border-slate-500 dark:focus:border-purple-500 focus:ring-slate-500 dark:focus:ring-purple-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-light text-slate-600 dark:text-slate-400">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 shadow-sm focus:border-slate-500 dark:focus:border-purple-500 focus:ring-slate-500 dark:focus:ring-purple-500"
-                  required
-                ></textarea>
-              </div>
-              <div>
-                <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)" }}
-                  whileTap={{ scale: 0.95 }}
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white px-4 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all"
-                >
-                  Send Message 🚀
-                </motion.button>
-              </div>
-            </form>
           </motion.div>
         </div>
       </div>

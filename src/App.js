@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import CatGame from './components/CatGame';
 import Story from './components/Story';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -18,6 +19,7 @@ function App() {
         <Navbar />
         <main>
           <Hero />
+          <CatGame />
           <Story />
           <About />
           <Projects />

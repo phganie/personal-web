@@ -68,7 +68,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex space-x-4"
+              className="flex flex-wrap gap-4"
             >
               <motion.a
                 whileHover={{ scale: 1.1, y: -5, boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)" }}
@@ -85,6 +85,16 @@ const Hero = () => {
                 className="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-full text-sm font-semibold border-2 border-blue-300 dark:border-blue-600 hover:bg-blue-50 dark:hover:bg-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all shadow-lg hover:shadow-xl"
               >
                 See My Work
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -5, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                download="Phuong-An-Bui-SWE-Resume.pdf"
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+              >
+                <span>💻</span>
+                My Resume
               </motion.a>
             </motion.div>
           </motion.div>

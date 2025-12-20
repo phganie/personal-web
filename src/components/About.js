@@ -12,7 +12,7 @@ const education = [
     degree: "Bachelor of Science in Computer Science and Business Administration",
     school: "Northeastern University",
     period: "Sep 2022 - Dec 2025",
-    description: "GPA: 3.78/4.0 | Minor: Psychology | Honors Program | Technical + Business + Design"
+    description: "GPA: 3.75/4.0 | Minor: Psychology | Honors Program | Concentration in Entrepreneural Startups"
   }
 ];
 
