@@ -59,22 +59,40 @@ const CatGame = () => {
     return () => clearInterval(interval);
   }, [gameActive, gameWon, gameLost]);
 
-  // Update cat positions
+  // Update cat positions using requestAnimationFrame for smoother animation
   useEffect(() => {
     if (!gameActive || gameWon || gameLost || timeUp) return;
 
-    const interval = setInterval(() => {
-      setCats(prev => 
-        prev
+    let animationFrameId;
+    let lastTime = performance.now();
+
+    const updateCats = (currentTime) => {
+      const deltaTime = Math.min(currentTime - lastTime, 100); // Cap deltaTime to prevent large jumps
+      lastTime = currentTime;
+      
+      // Update positions based on deltaTime for consistent speed
+      setCats(prev => {
+        const updated = prev
           .map(cat => ({
             ...cat,
-            y: cat.y + cat.speed,
+            y: cat.y + (cat.speed * deltaTime * 0.1), // Scale speed by deltaTime
           }))
-          .filter(cat => cat.y < 400) // Remove cats that fell off screen (h-96 = 384px)
-      );
-    }, 16); // ~60fps
+          .filter(cat => cat.y < 400); // Remove cats that fell off screen (h-96 = 384px)
+        
+        // Only update state if there are changes to prevent unnecessary re-renders
+        return updated;
+      });
 
-    return () => clearInterval(interval);
+      animationFrameId = requestAnimationFrame(updateCats);
+    };
+
+    animationFrameId = requestAnimationFrame(updateCats);
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [gameActive, gameWon, gameLost, timeUp]);
 
   // Check win condition
@@ -133,10 +151,10 @@ const CatGame = () => {
     return (
       <motion.section 
         layout
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         className="py-12 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900"
       >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -194,10 +212,10 @@ const CatGame = () => {
     return (
       <motion.section 
         layout
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         className="py-12 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900"
       >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -248,10 +266,10 @@ const CatGame = () => {
     return (
       <motion.section 
         layout
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         className="py-12 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900"
       >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -309,10 +327,10 @@ const CatGame = () => {
     return (
       <motion.section 
         layout
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         className="py-12 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 relative overflow-hidden"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -364,29 +382,32 @@ const CatGame = () => {
               {cats.map((cat) => (
                 <motion.div
                   key={cat.id}
-                  initial={{ opacity: 0, scale: 0, y: -50 }}
+                  initial={{ opacity: 0, scale: 0 }}
                   animate={{ 
                     opacity: 1, 
                     scale: cat.isDanger ? [1, 1.1, 1] : 1,
-                    y: cat.y,
                     rotate: cat.isDanger ? [0, 5, -5, 0] : 0,
                   }}
                   exit={{ opacity: 0, scale: 0 }}
                   transition={cat.isDanger ? {
                     scale: { duration: 0.5, repeat: Infinity },
                     rotate: { duration: 0.5, repeat: Infinity }
-                  } : {}}
+                  } : {
+                    opacity: { duration: 0.2 },
+                    scale: { duration: 0.2 }
+                  }}
                   whileHover={{ scale: cat.isDanger ? 1.3 : 1.2 }}
                   whileTap={{ scale: 0.8 }}
                   onClick={() => handleCatClick(cat)}
-                  className={`absolute cursor-pointer select-none z-10 ${
+                  className={`absolute cursor-pointer select-none z-10 will-change-transform ${
                     cat.isDanger ? 'filter drop-shadow-lg' : ''
                   }`}
                   style={{
                     fontSize: `${cat.size}px`,
                     left: `${cat.x}%`,
-                    top: 0,
+                    top: `${cat.y}px`,
                     transform: 'translateX(-50%)',
+                    transition: 'none', // Disable CSS transitions for position
                   }}
                 >
                   {cat.emoji}
@@ -416,10 +437,10 @@ const CatGame = () => {
     return (
       <motion.section 
         layout
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         className="py-8 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900"
       >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -472,9 +493,9 @@ const CatGame = () => {
     return (
       <motion.section 
         layout
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
         className="py-8 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-slate-900 relative overflow-hidden"
       >
@@ -510,16 +531,7 @@ const CatGame = () => {
     );
   }
 
-  return (
-    <motion.div
-      layout
-      initial={{ height: 0 }}
-      animate={{ height: 'auto' }}
-      exit={{ height: 0 }}
-      transition={{ duration: 0.3 }}
-      className="overflow-hidden"
-    />
-  );
+  return null;
 };
 
 export default CatGame;
