@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/phuongan-bui/static/css/main.713e1969.css",
-    "main.js": "/phuongan-bui/static/js/main.524ba5f2.js",
+    "main.css": "/phuongan-bui/static/css/main.3be0f38c.css",
+    "main.js": "/phuongan-bui/static/js/main.68fd89e3.js",
     "static/js/453.acca0757.chunk.js": "/phuongan-bui/static/js/453.acca0757.chunk.js",
     "index.html": "/phuongan-bui/index.html",
-    "main.713e1969.css.map": "/phuongan-bui/static/css/main.713e1969.css.map",
-    "main.524ba5f2.js.map": "/phuongan-bui/static/js/main.524ba5f2.js.map",
+    "main.3be0f38c.css.map": "/phuongan-bui/static/css/main.3be0f38c.css.map",
+    "main.68fd89e3.js.map": "/phuongan-bui/static/js/main.68fd89e3.js.map",
     "453.acca0757.chunk.js.map": "/phuongan-bui/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.713e1969.css",
-    "static/js/main.524ba5f2.js"
+    "static/css/main.3be0f38c.css",
+    "static/js/main.68fd89e3.js"
   ]
 }
