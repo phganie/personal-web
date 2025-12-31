@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: 'CookClip - AI-Powered Recipe Extraction Platform',
+    description: 'Full-stack web application that extracts structured recipes from YouTube cooking videos using AI. Features multi-authentication (email/password with bcrypt + Google OAuth), smart transcript processing with intelligent fallbacks, interactive recipe library, and AI recipe assistant. Deployed on Google Cloud Run with PostgreSQL.',
+    image: 'https://via.placeholder.com/600x400',
+    technologies: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'PostgreSQL', 'Google Cloud Platform', 'Vertex AI', 'Google Cloud Speech-to-Text', 'SQLAlchemy', 'JWT', 'OAuth 2.0', 'YouTube Data API', 'Tailwind CSS', 'yt-dlp', 'youtube-transcript-api'],
+    github: '#',
+    demo: '#'
+  },
+  {
     title: 'ReStacked - AI-Powered Q&A Platform',
     description: 'Built AI-powered Q&A platform solving knowledge workers\' search challenges. Implemented RAG workflows with Gemini 2.0 Flash, reducing search time by 60%. Developed real-time collaboration features using WebSocket, full-stack with React, TypeScript, Node.js, and MongoDB.',
     image: 'https://via.placeholder.com/600x400',
@@ -30,6 +38,7 @@ const projects = [
 
 const Projects = () => {
   const projectColors = [
+    { gradient: 'from-orange-500 via-red-500 to-pink-500', bg: 'from-orange-50 to-red-50 dark:from-orange-900/40 dark:to-red-900/40', border: 'border-orange-300 dark:border-orange-600', text: 'text-orange-800 dark:text-orange-300', badge: 'bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200' },
     { gradient: 'from-purple-500 via-pink-500 to-blue-500', bg: 'from-purple-50 to-pink-50 dark:from-purple-900/40 dark:to-pink-900/40', border: 'border-purple-300 dark:border-purple-600', text: 'text-purple-800 dark:text-purple-300', badge: 'bg-purple-200 dark:bg-purple-800 text-purple-800 dark:text-purple-200' },
     { gradient: 'from-blue-500 via-cyan-500 to-teal-500', bg: 'from-blue-50 to-cyan-50 dark:from-blue-900/40 dark:to-cyan-900/40', border: 'border-blue-300 dark:border-blue-600', text: 'text-blue-800 dark:text-blue-300', badge: 'bg-blue-200 dark:bg-blue-800 text-blue-800 dark:text-blue-200' },
     { gradient: 'from-indigo-500 via-purple-500 to-pink-500', bg: 'from-indigo-50 to-purple-50 dark:from-indigo-900/40 dark:to-purple-900/40', border: 'border-indigo-300 dark:border-indigo-600', text: 'text-indigo-800 dark:text-indigo-300', badge: 'bg-indigo-200 dark:bg-indigo-800 text-indigo-800 dark:text-indigo-200' },

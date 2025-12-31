@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive personal portfolio website showcasing my work as an AI/ML Engineer & Product Thinker. Built with React, featuring smooth animations, dark mode support, and an engaging cat-catching mini-game!
 
-## Available Scripts
+🌐 **Live Site**: [https://phganie.github.io/phuongan-bui](https://phganie.github.io/phuongan-bui)
 
-In the project directory, you can run:
+## ✨ Features
+
+### 🎨 Design & UX
+- **Modern UI/UX**: Clean, gradient-based design with smooth animations
+- **Dark Mode**: Full dark mode support with theme toggle
+- **Responsive Design**: Fully responsive across all device sizes
+- **Smooth Animations**: Powered by Framer Motion for fluid transitions
+- **Interactive Background**: Animated cat emoji background
+
+### 🎮 Interactive Mini-Game
+- **Cat Catching Game**: Fun mini-game where you catch falling cats
+- **30-Second Challenge**: Catch 10 cats within 30 seconds to win
+- **Danger Elements**: Avoid bombs 💣 and zombies 🧟 or lose instantly!
+- **Smooth Animations**: Optimized performance with requestAnimationFrame
+- **Peeking Cat**: A friendly cat that appears when you dismiss the game prompt
+
+### 📱 Sections
+- **Hero**: Animated typing introduction with call-to-action buttons
+- **Story**: Journey through my development as an engineer
+- **About**: Professional background and experience
+- **Projects**: Showcase of notable projects with descriptions
+- **Skills**: Technical skills organized by category
+- **Contact**: Multiple contact methods (email, phone, location, social links)
+- **Footer**: Quick navigation links and social media
+
+### 🎯 Key Highlights
+- **Resume Download**: Direct download link for resume PDF
+- **Contact Information**: Multiple ways to get in touch
+- **Social Links**: GitHub and LinkedIn integration
+- **Smooth Scrolling**: Seamless navigation between sections
+- **Performance Optimized**: Fast loading and smooth animations
+
+## 🛠️ Tech Stack
+
+- **React** 19.1.0 - UI framework
+- **Framer Motion** 12.9.2 - Animation library
+- **Tailwind CSS** 3.4.1 - Utility-first CSS framework
+- **React Scripts** 5.0.1 - Build tooling
+- **gh-pages** - GitHub Pages deployment
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/phganie/phuongan-bui.git
+cd phuongan-bui
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
+
+## 📜 Available Scripts
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode
 
 ### `npm run build`
+Builds the app for production to the `build` folder. Optimized and minified for deployment.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm run deploy`
+Deploys the built app to GitHub Pages (runs `predeploy` automatically)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── components/
+│   ├── About.js          # About section with experience
+│   ├── CatEmojiBackground.js  # Animated background cats
+│   ├── CatGame.js         # Interactive cat-catching game
+│   ├── Contact.js         # Contact information section
+│   ├── Footer.js         # Footer with links
+│   ├── Hero.js           # Hero section with introduction
+│   ├── Navbar.js         # Navigation bar
+│   ├── Projects.js       # Projects showcase
+│   ├── Skills.js         # Skills section
+│   ├── Story.js          # Personal journey story
+│   └── ThemeToggle.js    # Dark mode toggle
+├── App.js                # Main app component
+└── index.js              # Entry point
+```
 
-### `npm run eject`
+## 🎮 Game Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The cat-catching mini-game includes:
+- **Objective**: Catch 10 cats in 30 seconds
+- **Dangers**: Avoid clicking bombs or zombies
+- **Scoring**: Each cat caught adds to your score
+- **Timer**: Real-time countdown with visual feedback
+- **Win Condition**: Catch all 10 cats to see the celebration message
+- **Performance**: Optimized animations using requestAnimationFrame
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🎨 Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Updating Personal Information
+- Edit contact information in `src/components/Contact.js`
+- Update resume link in `src/components/Hero.js`
+- Modify social links in `src/components/Footer.js` and `src/components/Contact.js`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Styling
+- Tailwind CSS classes are used throughout
+- Color scheme can be modified in component files
+- Dark mode colors are defined with `dark:` prefixes
 
-## Learn More
+### Content
+- Update sections in respective component files:
+  - `Hero.js` - Introduction and tagline
+  - `Story.js` - Personal journey chapters
+  - `About.js` - Professional background
+  - `Projects.js` - Project showcase
+  - `Skills.js` - Technical skills
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚢 Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The site is deployed to GitHub Pages. To deploy:
 
-### Code Splitting
+1. Build the project:
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
 
-### Analyzing the Bundle Size
+The site will be available at: `https://phganie.github.io/phuongan-bui`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 License
 
-### Making a Progressive Web App
+This project is private and personal.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 👤 Author
 
-### Advanced Configuration
+**Phuong-An Bui**
+- Portfolio: [https://phganie.github.io/phuongan-bui](https://phganie.github.io/phuongan-bui)
+- GitHub: [@phganie](https://github.com/phganie)
+- LinkedIn: [phuongan-bui](https://linkedin.com/in/phuongan-bui)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with ❤️ using React and Framer Motion
